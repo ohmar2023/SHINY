@@ -25,9 +25,30 @@ ui <- fluidPage(
             label = "Selecciona la variable: ",
             choices = names(mtcars),
             selected = "wt"
-          )
+          ),
+          #--------------------------------------------------
+          radioButtons("Tema",
+                       "Elige tu estilo de ggplot",
+                       choices = c("Default","Clasico","B/N"),
+                       selected = "Clasico"
+          ),
+          #--------------------------------------------------
+          selectInput(
+            inputId = "cilindros",
+            label = "Selecciona un número: ",
+            choices = unique(mtcars$cyl),
+            selected = 1,
+            multiple = TRUE
+          ),
+          #--------------------------------------------------
+          radioButtons("reg_si_no",
+                       "Quieres hacer una regresión: ",
+                       choices = c("Si","No"),
+                       selected = "No"
+          ),
+          #--------------------------------------------------
           
-        ),
+        ), #fin sidebarpanel
 
         # Show a plot of the generated distribution
         mainPanel(
