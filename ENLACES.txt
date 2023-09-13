@@ -1,0 +1,5 @@
++++ CLASE 001
+https://www.youtube.com/watch?v=yXbxIc1cA6A
+
+--- WIDGEST DE R/SHINY
+https://shiny.posit.co/r/gallery/widgets/widget-gallery/
