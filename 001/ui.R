@@ -37,7 +37,7 @@ ui <- fluidPage(
             inputId = "cilindros",
             label = "Selecciona un número: ",
             choices = unique(mtcars$cyl),
-            selected = 1,
+            selected = 4,
             multiple = TRUE
           ),
           #--------------------------------------------------
@@ -46,6 +46,8 @@ ui <- fluidPage(
                        choices = c("Si","No"),
                        selected = "No"
           ),
+          #--------------------------------------------------
+          uiOutput("reg_Si_no")
           #--------------------------------------------------
           
         ), #fin sidebarpanel

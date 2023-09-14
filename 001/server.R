@@ -11,6 +11,12 @@ server <- function(input, output) {
   #-----------------------------------------------------------------------------
   output$carplot <- renderPlot({
     g <- ggplot(mt(),aes_string(x=input$var,y="mpg"))+geom_point()
+    
+    if (input$reg_si_no=="Si")
+    {
+      g <- g + stat_smooth(method = "lm",formula = input$Formula)
+    }
+      
     if (input$Tema=="Clasico")
     {
       g + theme_classic()
@@ -23,7 +29,6 @@ server <- function(input, output) {
     {
       g
     }
-    
     })
   #-----------------------------------------------------------------------------
   output$cartabla <- renderDataTable({
@@ -31,10 +36,11 @@ server <- function(input, output) {
   })
   #-----------------------------------------------------------------------------
   output$reg_Si_no <- renderUI({
-    
+    if (input$reg_si_no=="Si"){
+      textInput("Formula",
+                "Escribe una fórmula:",
+                "y~x")}
   })
   #-----------------------------------------------------------------------------
-  
-  
   }
 
