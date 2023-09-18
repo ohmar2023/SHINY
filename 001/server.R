@@ -1,6 +1,7 @@
 library(ggplot2)
 library(dplyr)
-
+library(dplyr)
+library(broom)#glance
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   
@@ -32,7 +33,8 @@ server <- function(input, output) {
     })
   #-----------------------------------------------------------------------------
   output$cartabla <- renderDataTable({
-    mt()
+    fit <- lm(as.formula(input$Modelo),data=mt())
+    glance(fit) %>% mutate_if(is.numeric,~round(.x,2))
   })
   #-----------------------------------------------------------------------------
   output$reg_Si_no <- renderUI({

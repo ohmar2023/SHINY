@@ -47,7 +47,11 @@ ui <- fluidPage(
                        selected = "No"
           ),
           #--------------------------------------------------
-          uiOutput("reg_Si_no")
+          uiOutput("reg_Si_no"),
+          #--------------------------------------------------
+          textInput("Modelo",
+                    "Escribir formula: ",
+                    "mpg~wt")
           #--------------------------------------------------
           
         ), #fin sidebarpanel
