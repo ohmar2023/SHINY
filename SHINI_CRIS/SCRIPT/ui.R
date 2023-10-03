@@ -53,7 +53,6 @@ ui <- dashboardPage(
     ),
     tabItem(tabName = "des",
             h2 ("No hay"))
-    #  )
   )#fin
 )
 
