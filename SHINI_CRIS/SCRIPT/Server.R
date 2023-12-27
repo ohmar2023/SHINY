@@ -6,7 +6,7 @@ emp_HI <- import("ind_HI.rds")
 server <- function(input, output) {
   output$p <- renderPlotly({
     plot_ly(emp_upm, x = ~x, y = ~tasas, color = ~rep, mode = "lines+markers") %>%
-      filter(tipo == as.character( input$variable) ) %>% 
+      filter(tipo == as.character(input$variable)) %>% 
       filter(rep %in% input$cities) %>%
       group_by(rep) %>%
       add_lines()
