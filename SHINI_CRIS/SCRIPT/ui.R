@@ -34,15 +34,14 @@ ui <- dashboardPage(
                radioButtons("graf_si_no",
                             "Grafico: ",
                             choices = c("Si","No"),
-                            selected = "No"
+                            selected = "Si"
                )
                
       )
     )
   ),
   dashboardBody(
-    # tabItems(
-    #Empleo adecuado
+    
     tabItem(tabName = "des",
             fluidRow(
               box(title = "UPM",
@@ -50,9 +49,8 @@ ui <- dashboardPage(
               box(title = "Hogar Integrado",
                   plotlyOutput(outputId = "p1"))
             )
-    ),
-    tabItem(tabName = "des",
-            h2 ("No hay"))
+    )
+    
   )#fin
 )
 

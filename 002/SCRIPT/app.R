@@ -34,8 +34,8 @@ ui <- fluidPage(
            p("Seleccionamos una variable desde un selectinput",
              style = "font-family: 'times'; font-si16pt" ),
            textOutput("variable_1"),br(),
-           p("Hacemos una tabla de resumen: "),br()
-          # tableOutput("tabla_1")
+           p("Hacemos una tabla de resumen: "),br(),
+           tableOutput("tabla_1")
         )
     )
 )
