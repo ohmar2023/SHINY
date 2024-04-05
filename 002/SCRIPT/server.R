@@ -4,8 +4,8 @@ server <- function(input, output) {
 
 # SALIDA GRAFICO ---------------------------------------------------------  
   output$distPlot <- renderPlot({
-    #ggplot(Data_Banco, aes(y = Monto, x = Sucursal,fill= Sucursal )) +
-    #  geom_bar(width = 0.5, stat="identity", position = position_dodge())
+    ggplot(Data_Banco, aes(x = as.character(Sucursal),y=Cajero,fill=as.character(Sucursal)))  +
+      geom_bar(width = 0.9, stat="identity",position = position_dodge())
   })
   
 # SALIDA EN TEXTO 1 -------------------------------------------------------

@@ -26,7 +26,6 @@ ui <- fluidPage(
         ),
       # --------------------------------------------------------------2do input
       #h6("Shiny:", align = "center"), 
-        
 
         # Show a plot of the generated distribution
         mainPanel(
