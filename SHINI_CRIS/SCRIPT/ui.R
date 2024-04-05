@@ -13,6 +13,17 @@ ui <- dashboardPage(
   dashboardHeader(title = "Indicadores"),
   dashboardSidebar(
     sidebarMenu(
+      # ------------------------------------------------------------------------- PESTAÑA 1
+      menuItem("Pestaña",
+               selectizeInput(
+                 label = "",
+                 inputId = "variable",
+                 choices = (unique(emp_HI$tipo)),
+                 selected = "Abilene",
+                 multiple = FALSE
+               )
+               ),
+      # ------------------------------------------------------------------------- PESTAÑA 2
       menuItem("Empleo adecuado", tabName = "emp_ade",
                
                selectizeInput(
@@ -39,6 +50,8 @@ ui <- dashboardPage(
                
       )
     )
+    
+    
   ),
   dashboardBody(
     
