@@ -1,16 +1,8 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
-
-# Define UI for application that draws a histogram
 ui <- fluidPage(
 
+  #theme=shinytheme("cerulean"),
+  #collapsible = TRUE,
     # Application title
     titlePanel("R INICIAL"),
 
@@ -22,19 +14,28 @@ ui <- fluidPage(
             selectInput( inputId = "var",
                          label = "Variable seleccionada:",
                          selected = names(Data_Banco)[1],
-                         choices =  names(Data_Banco))
+                         choices =  names(Data_Banco %>% select_if(is.character))),
+      # --------------------------------------------------------------2do input     
+            sliderInput("obs", 
+                        "Rango-Monto:",
+                        min = min(Data_Banco$Monto,na.rm = TRUE),
+                        max = max(Data_Banco$Monto,na.rm = TRUE),
+                        animate = TRUE,
+                        value = c(min(Data_Banco$Monto,na.rm = TRUE),
+                                  max(Data_Banco$Monto,na.rm = TRUE))
+            )
         ),
-      # --------------------------------------------------------------2do input
-      #h6("Shiny:", align = "center"), 
+      
 
-        # Show a plot of the generated distribution
         mainPanel(
            plotOutput("distPlot"),
            p("Seleccionamos una variable desde un selectinput",
              style = "font-family: 'times'; font-si16pt" ),
            textOutput("variable_1"),br(),
+           textOutput("variable_2"),br(),
            p("Hacemos una tabla de resumen: "),br(),
-           tableOutput("tabla_1")
+           tableOutput("tabla_1"),br(),
+           plotOutput("grafico_caja")
         )
     )
 )
