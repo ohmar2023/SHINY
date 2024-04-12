@@ -9,6 +9,8 @@ library(readxl)
 library(tidyverse)
 library(ggplot2)
 library(shinythemes)
+library(janitor)
+
 
 Data_Banco <- read_excel("DATA/Data_Banco.xlsx", 
                          sheet = "Data") %>% 
@@ -16,6 +18,12 @@ Data_Banco <- read_excel("DATA/Data_Banco.xlsx",
 
 
 class(Data_Banco$Monto)
+
+summary(Data_Banco)
+
+unique(Data_Banco$Satisfaccion)
+Data_Banco %>% group_by(Satisfaccion) %>% summarise(n())
+
 
 
 

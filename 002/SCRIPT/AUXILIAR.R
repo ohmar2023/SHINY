@@ -19,6 +19,29 @@ Data_Banco %>% group_by_at(ej) %>% summarise(n = n()) %>% View()
 
 
 
+# ADORN TOTALS ------------------------------------------------------------
+
+some_df <- data.frame( drug = rep(c('A','B', 'C'), 2),
+                       year =  rep(c(2016, 2017), 3),
+                       patients = sample(5:100, 6))
+
+some_df %>% adorn_totals("col",,,,-drug,-patients)
+
+some_df %>% adorn_totals(c("col","row"))
+
+
+# BASE PABLO --------------------------------------------------------------
+
+db_2 <- unzip("DATA/bases_ENEMDU_2024_03.zip")
+import(db_2[2])
+library(rio)
+
+
+
+
+
+
+
 
 
 
