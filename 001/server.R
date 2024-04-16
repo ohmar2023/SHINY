@@ -11,7 +11,7 @@ server <- function(input, output) {
   })
   #-----------------------------------------------------------------------------
   output$carplot <- renderPlot({
-    g <- ggplot(mt(),aes_string(x=input$var,y="mpg"))+geom_point()
+    g <- ggplot(mt(),aes(x=input$var,y=mpg))+geom_point()
     
     if (input$reg_si_no=="Si")
     {

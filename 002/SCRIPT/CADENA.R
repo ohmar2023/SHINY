@@ -8,11 +8,15 @@ df
 
 names(df)
 df %>% mutate(
-hola = grepl(df$Creature, pattern = "Bl&ta","xxxx" ))
+hola = grepl(df$Creature, pattern = "Bl&ta" ))
 
+df %>% mutate(
+  hola = sub(x = df$Creature,pattern = "e", replacement = "_X_" ))
 
+nchar("hola")
 
-
+df
+table(nchar(df$Creature))
 
 
 

@@ -1,0 +1,12 @@
+name: Ejemplo1
+title: Ejemplo1
+username: omarllambo
+account: omarllambo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11710231
+bundleId: 8472874
+url: https://omarllambo.shinyapps.io/Ejemplo1/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

@@ -9,6 +9,7 @@
 
 library(shiny)
 library(DT)
+library(ggplot2)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
@@ -63,3 +64,6 @@ ui <- fluidPage(
         )
     )
 )
+
+# Run the application 
+shinyApp(ui = ui, server = server)
