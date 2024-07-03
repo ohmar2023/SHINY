@@ -18,7 +18,6 @@ shinyServer(function(input, output) {
   source("serv/graf_1.R", local = T)
   # SALIDA GRAFICO ---------------------------------------------------------  
   
-
   # SALIDA EN TEXTO 1 -------------------------------------------------------
   output$variable_1 <- renderText({
     print(input$var)
@@ -33,7 +32,6 @@ shinyServer(function(input, output) {
   output$tabla_1 <- renderTable({
     Data_Banco %>% group_by(.data[[input$var]]) %>% summarise(n = n()) 
   })
-  
   
   # DIAGRAMA DE CAJAS ------------------------------------------------------- 
   output$grafico_caja <- renderPlot({
